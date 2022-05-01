@@ -1,0 +1,13 @@
+[Unit]
+Description=Shutdown por Pulsante
+After=multi-user.target
+
+[Service]
+Type=idle
+Restart=always
+
+WorkingDirectory=/home/pi/tstser
+ExecStart=/usr/bin/python3 /home/pi/tstser/listen_offrpi.py &
+
+[Install]
+WantedBy=multi-user.target

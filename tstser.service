@@ -1,0 +1,14 @@
+[Unit]
+Description=Test serial
+After=multi-user.target
+
+[Service]
+Type=idle
+Restart=always
+
+WorkingDirectory=/home/pi/tstser
+ExecStart=/usr/bin/python3 /home/pi/tstser/sercmd.py &
+
+[Install]
+WantedBy=multi-user.target
+
